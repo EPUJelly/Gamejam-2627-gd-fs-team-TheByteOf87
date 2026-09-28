@@ -37,8 +37,6 @@ public class StartAndTimer : MonoBehaviour
     {
         if (isRunning == false)
         {
-            BoatP1Movement.toggleMovementP1(false);
-            BoatP2Movement.toggleMovementP2(false);
             if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.X) && canStart)
             {
                 StartGame();
