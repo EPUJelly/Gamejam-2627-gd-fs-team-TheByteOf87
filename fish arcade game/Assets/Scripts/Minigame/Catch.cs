@@ -79,9 +79,14 @@ public class Catch : MonoBehaviour
         GameStates.SwitchBoatState(player);
         chosenFish = GetRandomFish();
 
-        FishIcon.enabled = true;
+        FishIcon.gameObject.SetActive(true);
         FishIcon.sprite = chosenFish.icon;
         fishStats.text = "Fish; " + chosenFish.fishName + " Length: " + chosenFish.fishLength + " Points " + chosenFish.points;
+
+        if (player == 0)
+            Inventory.collectFishActionP1.Invoke(chosenFish);
+        else if (player == 1)
+            Inventory.collectFishActionP2.Invoke(chosenFish);
 
         fishingSlider.gameObject.SetActive(false);
         targetSlider.gameObject.SetActive(false);

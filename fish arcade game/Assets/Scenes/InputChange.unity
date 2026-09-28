@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3e5399bd195de7649b874f58c1b9f8a3, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7c6697a3d51c9324c8e9ad3284a1ac04, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &153485265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8085535179577152624, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+  m_PrefabInstance: {fileID: 1789630388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &345137318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: player
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: FishIcon
@@ -245,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6656122667654500799, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: playerID
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6989196575542664939, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMax.x
@@ -812,13 +823,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: FishIcon
       value: 
-      objectReference: {fileID: 1455269595}
+      objectReference: {fileID: 153485265}
     - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: fishStats
       value: 
-      objectReference: {fileID: 2023659181}
+      objectReference: {fileID: 2076326041}
     - target: {fileID: 2448079189460659684, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: playerInput
       value: 
@@ -826,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 2497738495087333811, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
       value: Seat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010470964036199305, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: player
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4774856674501980291, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
@@ -838,6 +857,10 @@ PrefabInstance:
     - target: {fileID: 6443610259956933299, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
       value: Camera Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656122667654500799, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: playerID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6989196575542664939, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1435,11 +1458,11 @@ PrefabInstance:
     - target: {fileID: 5567169798319835598, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: 'playerInputs.Array.data[0]'
       value: 
-      objectReference: {fileID: 1932576986}
+      objectReference: {fileID: 879047446}
     - target: {fileID: 5567169798319835598, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: 'playerInputs.Array.data[1]'
       value: 
-      objectReference: {fileID: 879047446}
+      objectReference: {fileID: 1932576986}
     - target: {fileID: 6238764692226035109, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1520,6 +1543,17 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
   m_PrefabInstance: {fileID: 1127808121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &2076326041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+  m_PrefabInstance: {fileID: 1789630388}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

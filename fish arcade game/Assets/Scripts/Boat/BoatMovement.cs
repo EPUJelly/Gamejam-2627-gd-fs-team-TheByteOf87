@@ -12,6 +12,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] private float rotSpeed;
     [SerializeField] private float boatTiltXAmount;
     [SerializeField] private float boatTiltXSpeed;
+    [SerializeField] int player;
     private float boatAngleTarg;
     private float boatTiltXTarg;
     private float boatTiltX;
@@ -32,9 +33,10 @@ public class BoatMovement : MonoBehaviour
         moveVector = context.ReadValue<Vector2>();
     }
 
-    private void ToggleMove(bool value, int player)
+    private void ToggleMove(bool value, int _player)
     {
-        canMove = value;
+        if (player == _player)
+            canMove = value;
     }
 
     void FixedUpdate()

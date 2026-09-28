@@ -22,7 +22,6 @@ public class Inventory : MonoBehaviour
     {
         collectFishActionP1 += CollectFishP1;
         collectFishActionP2 += CollectFishP2;
-        
     }
 
     private void Start()
