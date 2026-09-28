@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,8 @@ public class StartAndTimer : MonoBehaviour
     private bool isRunning = false;
     [SerializeField] private GameObject startCanvas;
     [SerializeField] private GameObject startText;
-    [SerializeField] private Slider sliderTimer;
+    [SerializeField] private Image timerImage;
+    [SerializeField] private List<Sprite> timerSprs;
     [SerializeField] private GameObject endCanvas;
     [SerializeField] private TMP_Text scoreP1;
     [SerializeField] private TMP_Text scoreP2;
@@ -33,11 +35,17 @@ public class StartAndTimer : MonoBehaviour
 
     void Update()
     {
-        sliderTimer.value = Mathf.Lerp(0,gameTime,1-Remap(remainingTime,0,210,0,1));
-
-        if (isRunning) return;
-
-        StartGame();
+        if (isRunning == false)
+        {
+            BoatP1Movement.toggleMovementP1(false);
+            BoatP2Movement.toggleMovementP2(false);
+            if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.X) && canStart)
+            {
+                StartGame();
+            }
+            
+        }
+        timerImage.sprite = timerSprs[210 - remainingTime];
     }
 
     public void StartGame()
