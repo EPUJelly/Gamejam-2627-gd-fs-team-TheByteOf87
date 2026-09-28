@@ -24,7 +24,6 @@ public class BoatMovement : MonoBehaviour
     void Start()
     {
         toggleMovement += ToggleMove;
-        toggleMovement.Invoke(false, 0);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -43,7 +42,7 @@ public class BoatMovement : MonoBehaviour
         if (canMove)
         {
             boatAngleTarg = moveVector.x * rotAmount;
-            boatTiltXTarg = moveVector.y * boatTiltXAmount;
+            boatTiltXTarg = moveVector.y * boatTiltXAmount; 
             boatAngle = Mathf.LerpAngle(boatAngle, boatAngleTarg, rotSpeed);
             boatTiltX = Mathf.LerpAngle(boatTiltX, boatTiltXTarg, boatTiltXSpeed);
             float boatAngleFinal = boatAngle + transform.rotation.eulerAngles.y;
@@ -54,6 +53,7 @@ public class BoatMovement : MonoBehaviour
             {
                 engineParticles.Play();
                 if (hasPlayedSound == false)
+
                 {
                     motorSound.Play();
                     hasPlayedSound = true;

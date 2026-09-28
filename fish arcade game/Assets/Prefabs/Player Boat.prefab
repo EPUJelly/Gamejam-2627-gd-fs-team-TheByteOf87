@@ -5029,6 +5029,7 @@ GameObject:
   - component: {fileID: 2767712467933105243}
   - component: {fileID: 3223989680437898941}
   - component: {fileID: 885044837826786944}
+  - component: {fileID: 6167379064253905672}
   - component: {fileID: 4010470964036199305}
   m_Layer: 0
   m_Name: Player Boat
@@ -5050,6 +5051,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4301216107244720575}
   - {fileID: 260165465747517076}
   - {fileID: 7553060667924573893}
   - {fileID: 332036761804162955}
@@ -5207,6 +5209,100 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6167379064253905672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774856674501980291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4010470964036199305}
+        m_TargetAssemblyTypeName: BoatMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1420a50b-cd44-4fc8-bc64-6edd74e84256
+    m_ActionName: 'Boating/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6656122667654500799}
+        m_TargetAssemblyTypeName: GameStates, Assembly-CSharp
+        m_MethodName: StartFish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 97f7ebd6-3157-40b8-afb1-10c529b9f7d4
+    m_ActionName: 'Boating/Interact[/Keyboard/z]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4736421162203445576}
+        m_TargetAssemblyTypeName: Fishing, Assembly-CSharp
+        m_MethodName: OnFish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 34934da7-c145-4e3d-95db-29e03540f890
+    m_ActionName: 'Fishing/Fish[/Keyboard/w,/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 72aff71c-965f-40a1-8ed5-a025af74bbb2
+    m_ActionName: 'UI/Interact[/Keyboard/z]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &4010470964036199305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,6 +5322,51 @@ MonoBehaviour:
   boatTiltXSpeed: 0.2
   engineParticles: {fileID: 120526489115330958}
   motorSound: {fileID: 885044837826786944}
+--- !u!1 &5518533894710933367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4301216107244720575}
+  - component: {fileID: 6656122667654500799}
+  m_Layer: 0
+  m_Name: GameStates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4301216107244720575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518533894710933367}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -153.65216, y: -9.8132305, z: -271.13947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1691971551624340649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6656122667654500799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518533894710933367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c47b68871b11554d895c109b7eecc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameStates
+  playerID: 0
 --- !u!1 &6443610259956933299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,6 +5846,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+--- !u!114 &4736421162203445576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7099547089646060327, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+  m_PrefabInstance: {fileID: 2539341368472664687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ad09b017d8ad742b857e2a3c1354e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UserInput
 --- !u!224 &5967399977722106674 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8209493864437295453, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}

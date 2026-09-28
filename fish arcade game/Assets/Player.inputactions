@@ -173,6 +173,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bf9850a5-cdbe-4a98-9d78-7aa0853da7f8",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse;Arrows",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e63840aa-4db2-4f29-872b-b5be12d22cd6",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -306,7 +317,7 @@
             "id": "272f6d14-89ba-496f-b7ff-215263d3219f",
             "actions": [
                 {
-                    "name": "Interact",
+                    "name": "Submit",
                     "type": "Button",
                     "id": "72aff71c-965f-40a1-8ed5-a025af74bbb2",
                     "expectedControlType": "",
@@ -324,7 +335,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;WASD",
-                    "action": "Interact",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -335,7 +346,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Arrows",
-                    "action": "Interact",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -346,7 +357,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Interact",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -357,7 +368,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Joystick",
-                    "action": "Interact",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

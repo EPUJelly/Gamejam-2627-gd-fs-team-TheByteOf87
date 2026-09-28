@@ -21,6 +21,7 @@ public class StartAndTimer : MonoBehaviour
     [SerializeField] private Transform boat2;
     [SerializeField] private AudioSource startSfx;
     [SerializeField] private AudioSource endSfx;
+    [SerializeField] PlayerInput[] playerInputs;
 
 
     void Start()
@@ -30,17 +31,13 @@ public class StartAndTimer : MonoBehaviour
         EnableText();
     }
 
-    // Update is called once per frame
     void Update()
     {
         sliderTimer.value = Mathf.Lerp(0,gameTime,1-Remap(remainingTime,0,210,0,1));
 
         if (isRunning) return;
 
-        if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.X) && canStart)
-        {
-            StartGame();
-        }
+        StartGame();
     }
 
     public void StartGame()
@@ -55,8 +52,10 @@ public class StartAndTimer : MonoBehaviour
         canStart = false;
         boat1.position = boatStart1.position;
         boat1.rotation = boatStart1.rotation;
-        //boat2.position = boatStart2.position;
-        //boat2.rotation = boatStart2.rotation;
+        boat2.position = boatStart2.position;
+        boat2.rotation = boatStart2.rotation;
+        playerInputs[0].SwitchCurrentActionMap("Boating");
+        playerInputs[1].SwitchCurrentActionMap("Boating");
         startSfx.Play();
     }
 
