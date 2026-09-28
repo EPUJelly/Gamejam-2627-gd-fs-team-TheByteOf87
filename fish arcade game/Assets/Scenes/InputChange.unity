@@ -129,20 +129,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 363153540690926096, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 81440c6c29eef3647abfb4be4600658c, type: 2}
+      objectReference: {fileID: 8400000, guid: 81b6cf3d995b6e64c9b84915cb27ecb9, type: 2}
     - target: {fileID: 363153540690926096, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774856674501980291, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
-      value: Player 2 Boat
+      value: Player 1 Boat
       objectReference: {fileID: 0}
     - target: {fileID: 4774856674501980291, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_IsActive
@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167379064253905672, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Arrows
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6443610259956933299, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
@@ -261,15 +261,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8055766901514709497, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Actions
@@ -735,6 +735,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319096135807554507, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 363153540690926096, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 81440c6c29eef3647abfb4be4600658c, type: 2}
     - target: {fileID: 1085841218248510264, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
       value: Boat
@@ -813,11 +829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774856674501980291, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
-      value: Player 1 Boat
+      value: Player 2 Boat
       objectReference: {fileID: 0}
     - target: {fileID: 6167379064253905672, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: WASD
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6443610259956933299, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_Name
@@ -834,6 +850,18 @@ PrefabInstance:
     - target: {fileID: 6989196575542664939, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106994919919895140, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8055766901514709497, guid: c7dbcf79cca7af746a31209242fa6eda, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -906,7 +934,7 @@ MonoBehaviour:
   m_NotificationBehavior: 2
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1504,8 +1532,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1298621823}
-  - {fileID: 1128470610}
   - {fileID: 345137318}
+  - {fileID: 1128470610}
   - {fileID: 785373083}
   - {fileID: 508118563}
   - {fileID: 1793573358}
