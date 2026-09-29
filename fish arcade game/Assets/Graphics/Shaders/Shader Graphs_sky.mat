@@ -40,14 +40,16 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _blendHeight: 0.04
-    - _cloudDensity: 0.18
-    - _cloudScale: 20
+    - _blendHeight: 0
+    - _cloudDensity: 0.2
+    - _cloudScale: 100
     m_Colors:
+    - _cloudColor: {r: 0.43775952, g: 0.56436133, b: 0.6415094, a: 1}
+    - _darkCloudColor: {r: 0.72955966, g: 0.72955966, b: 0.72955966, a: 1}
     - _panSpeed: {r: 0.01, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8848672721778139087
+--- !u!114 &7887708716680750679
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
