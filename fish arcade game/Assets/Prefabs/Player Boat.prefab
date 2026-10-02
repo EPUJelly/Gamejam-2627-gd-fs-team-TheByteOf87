@@ -5320,6 +5320,7 @@ MonoBehaviour:
   rotSpeed: 0.01
   boatTiltXAmount: 5
   boatTiltXSpeed: 0.2
+  player: 0
   engineParticles: {fileID: 120526489115330958}
   motorSound: {fileID: 885044837826786944}
 --- !u!1 &5518533894710933367
@@ -5439,7 +5440,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1079
+    m_Bits: 5175
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 81b6cf3d995b6e64c9b84915cb27ecb9, type: 2}
   m_TargetDisplay: 0
