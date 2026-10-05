@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Horseshoecrab
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 40
+  fishLength: 1
   points: 750
   fishName: Horseshoe Crab
   icon: {fileID: -4646982216538462501, guid: 10c87bba5982f3742b14f492e214ed56, type: 3}

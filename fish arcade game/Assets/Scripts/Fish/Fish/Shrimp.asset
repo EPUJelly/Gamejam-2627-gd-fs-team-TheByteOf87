@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Shrimp
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 7
+  fishLength: 2
   points: 500
   fishName: Shrimp
   icon: {fileID: 868504884959497903, guid: 400b538eb018f804294378cc8cda6b3e, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Catfish
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 100
+  fishLength: 4
   points: 1000
   fishName: Cat Fish
   icon: {fileID: 7691470586555950613, guid: 006256f6bc797894fa04020c15269d80, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Shark
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 150
+  fishLength: 5
   points: 1500
   fishName: Shark
   icon: {fileID: 5746764926269108267, guid: 6ceb664ecc31c50488b51a85bfe08aa9, type: 3}

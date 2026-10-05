@@ -43,7 +43,7 @@ public class StartAndTimer : MonoBehaviour
             }
             
         }
-        timerImage.sprite = timerSprs[210 - remainingTime];
+        timerImage.sprite = timerSprs[211 - remainingTime];
     }
 
     public void StartGame()
