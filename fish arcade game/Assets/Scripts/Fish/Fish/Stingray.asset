@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Stingray
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 200
+  fishLength: 3
   points: 1000
   fishName: Stingray
   icon: {fileID: 3142052452305003664, guid: 5ee743500df520e4482f2cd22e706732, type: 3}

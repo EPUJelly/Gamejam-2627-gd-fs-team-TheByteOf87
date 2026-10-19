@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Jellyfish
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 18
+  fishLength: 2
   points: 1750
   fishName: Moon Jellyfish
   icon: {fileID: 1898918936286717424, guid: cc67ed6e9c0615141bab721a5593b482, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Walking Fish
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 10
+  fishLength: 2
   points: 1000
   fishName: Walking fish
   icon: {fileID: 5269658277230468567, guid: 86acc14992163d442893bc926bbdde56, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Sunfish
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 250
+  fishLength: 4
   points: 10
   fishName: Sunfish
   icon: {fileID: 4803561921784974680, guid: a9d1de041891d784f8e30db2da4da2e2, type: 3}

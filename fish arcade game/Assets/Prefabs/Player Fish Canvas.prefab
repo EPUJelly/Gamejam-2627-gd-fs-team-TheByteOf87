@@ -98,7 +98,7 @@ RectTransform:
   m_GameObject: {fileID: 1096169111233880769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 377997904565073780}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b4eb0357da3fb234a851c3b01d7be5c2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 124e83d625eeab346a90518fcc68bc32, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -381,10 +381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -439,12 +439,17 @@ MonoBehaviour:
   targetSlider: {fileID: 1941360192163034}
   targetImage: {fileID: 2623204017298409131}
   targetImages:
-  - {fileID: 2800000, guid: b4eb0357da3fb234a851c3b01d7be5c2, type: 3}
-  - {fileID: 2800000, guid: bb035a248cc7d4d4692dc47f249d603d, type: 3}
-  - {fileID: 2800000, guid: da3364d0605c70a43b5ea51cc20aedf1, type: 3}
-  - {fileID: 2800000, guid: f7d798be83511bf48a161ae7947f6b2d, type: 3}
-  - {fileID: 2800000, guid: 2ecff2679c92b3c4f9870f5365a2453a, type: 3}
-  targetSpeeds: {x: 20, y: 50}
+  - {fileID: 2800000, guid: 124e83d625eeab346a90518fcc68bc32, type: 3}
+  - {fileID: 2800000, guid: 6066b721fe3696c4e852270565ec55bd, type: 3}
+  - {fileID: 2800000, guid: 2444b7bb19efaf949a65fb460ae34542, type: 3}
+  - {fileID: 2800000, guid: d24cc395a4da9774ea8fbbfd07500590, type: 3}
+  - {fileID: 2800000, guid: e54604842c051fe4088cd16b35740b99, type: 3}
+  targetSpeeds:
+  - {x: 10, y: 20}
+  - {x: 20, y: 30}
+  - {x: 40, y: 50}
+  - {x: 60, y: 70}
+  - {x: 80, y: 90}
   targetSwitchTiming: {x: 0.1, y: 1}
   target: 0
   player: 0
@@ -452,6 +457,7 @@ MonoBehaviour:
   FishIcon: {fileID: 0}
   fishStats: {fileID: 0}
   playerInput: {fileID: 0}
+  handle: {fileID: 4882764855164839044}
   fishList:
   - {fileID: 11400000, guid: b33b72a27d118004999cfd3556c23d4e, type: 2}
   - {fileID: 11400000, guid: 164cc6a538348884bad439c93d0dac25, type: 2}
@@ -499,8 +505,8 @@ RectTransform:
   m_GameObject: {fileID: 8431458372863664395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5921750761621609010}
   - {fileID: 9060371540714676689}
@@ -627,7 +633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: abf96ba21080dff46ad5ca3e6c0c3e08, type: 3}
+  m_Texture: {fileID: 2800000, guid: 87c1862780404904bb7cd957913799b0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
