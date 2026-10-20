@@ -353,9 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowFish
   fishSpeed: 5
-  rotationSpeed: 1
-  avoidDistance: 2.5
-  test: 0
+  rotationSpeed: 3
+  avoidDistance: 3
 --- !u!1 &7867441089908015610
 GameObject:
   m_ObjectHideFlags: 0

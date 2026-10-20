@@ -9,8 +9,8 @@ public class FishMovement : MonoBehaviour
     [Header("Prank em John")]
     [SerializeField] bool isPrankFish;
     [SerializeField] float chanceToPrank = 0.10f;
-    bool inZone;
     float zoneSize;
+    bool inZone;
     Vector3 random;
     Vector3 direction;
     Quaternion lookRotation;
@@ -42,9 +42,10 @@ public class FishMovement : MonoBehaviour
 
     void TurnBack()
     {
-        if (Vector3.Distance(transform.parent.position, transform.position) > zoneSize)
+        direction = transform.parent.position - transform.position;
+        if (direction.magnitude > zoneSize)
         {
-            direction = transform.parent.position - transform.position + random;
+            direction += random;
             lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
             if (!inZone) return;

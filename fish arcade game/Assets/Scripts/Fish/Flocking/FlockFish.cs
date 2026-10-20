@@ -1,7 +1,7 @@
 
-using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Profiling;
 
 public class FlockFish : MonoBehaviour
 {
@@ -9,61 +9,114 @@ public class FlockFish : MonoBehaviour
     [SerializeField] float fishSpeed = 5;
     [SerializeField] float rotationSpeed = 1;
     [SerializeField] float avoidDistance = 2.5f;
+    FlockManager flock;
     Quaternion lookRotation;
-    Vector3 direction;
-    Vector3 avoidVector;
-    Vector3 leaderDirection;
-    Vector3 random;
-    Transform leader;
-    List<Transform> fishList;
+    Vector3 moveVector;
+    float FOV;
+    List<Transform> fishList = new List<Transform>(),
+        cohesionNeighbours = new List<Transform>(),
+        avoidanceNeighbours = new List<Transform>(), 
+        alignmentNeighbours = new List<Transform>();
 
     private void Start()
     {
+        flock = transform.parent.GetComponent<FlockManager>();
         lookRotation = transform.rotation;
-        random = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
         transform.position += transform.forward * fishSpeed * Time.deltaTime;
 
-        avoidVector = new Vector3(0, 0, 3f);
-        Vector3 difference;
-        float delta = 0;
-        foreach (var fish in fishList)
+        GetNearbyFish();
+        var cohesionVector = CalculateCohesionVector() * flock.cohesionWeight;
+        var avoidanceVector = CalculateAvoidVector() * flock.avoidanceWeight;
+        var alignmentVector = CalculateAlignmentVector() * flock.alignmentWeight;
+        var boundsVector = CalculateBoundsVector() * flock.boundsWeight;
+
+        moveVector = cohesionVector + avoidanceVector + alignmentVector + boundsVector;
+
+        if (moveVector == Vector3.zero)
+            moveVector = transform.forward;
+
+        Debug.DrawLine(transform.position, transform.position + moveVector, Color.white);
+        lookRotation = Quaternion.LookRotation(moveVector);
+    }
+
+    void GetNearbyFish()
+    {
+        cohesionNeighbours.Clear();
+        avoidanceNeighbours.Clear();
+        alignmentNeighbours.Clear();
+
+        foreach (Transform fish in fishList)
         {
-            difference = transform.position - fish.position;
-            delta = difference.sqrMagnitude;
+            float distance = (transform.position - fish.position).sqrMagnitude;
 
-            if (delta > avoidDistance)
-                continue;
+            if (distance <= flock.cohesionDistance * flock.cohesionDistance)
+                cohesionNeighbours.Add(fish);
 
-            if (delta < avoidVector.magnitude)
-                avoidVector = difference;
+            if (distance <= flock.avoidanceDistance * flock.avoidanceDistance)
+                avoidanceNeighbours.Add(fish);
+
+            if (distance <= flock.alignmentDistance * flock.alignmentDistance)
+                alignmentNeighbours.Add(fish);
+        }
+    }
+
+    Vector3 CalculateCohesionVector()
+    {
+        if (cohesionNeighbours.Count == 0) return Vector3.zero;
+
+        Vector3 cohesionVector = Vector3.zero;
+        foreach (var fish in cohesionNeighbours)
+        {
+            if (Vector3.Angle(transform.position, fish.position) <= FOV)
+                cohesionVector += fish.position;
         }
 
-        if (avoidVector.sqrMagnitude > avoidDistance)
-            Follow();
-        else
-            Avoid();
+        Debug.DrawLine(transform.position, transform.position + cohesionVector, Color.blue);
+        return cohesionVector.normalized;
     }
 
-    void Follow()
+    Vector3 CalculateAlignmentVector()
     {
-        leaderDirection = leader.GetComponent<FishMovement>().GetDirection();
-        direction = leaderDirection - transform.position + random;
-        lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        if (alignmentNeighbours.Count == 0) return transform.forward;
+
+        var alignmentVector = transform.forward;
+        foreach (var fish in alignmentNeighbours)
+        {
+            if (Vector3.Angle(transform.position, fish.position) <= FOV)
+                alignmentVector += fish.forward;
+        }
+
+        Debug.DrawLine(transform.position, transform.position + alignmentVector, Color.green);
+        return alignmentVector.normalized;
     }
 
-    void Avoid()
+    Vector3 CalculateAvoidVector()
     {
-        lookRotation = Quaternion.LookRotation(new Vector3(avoidVector.x, 0, avoidVector.z));
+        if (avoidanceNeighbours.Count == 0) return Vector3.zero;
+
+        Vector3 avoidVector = Vector3.zero;
+        foreach (var fish in avoidanceNeighbours)
+        {   
+            if (Vector3.Angle(transform.position, fish.position) <= FOV)
+                avoidVector += transform.position - fish.position;
+        }
+
+        Debug.DrawLine(transform.position, transform.position + avoidVector, Color.blue);
+        return avoidVector.normalized;
     }
 
-    public void SetLeader(Transform _leader)
+    private Vector3 CalculateBoundsVector()
     {
-        leader = _leader;
+        var offset = flock.transform.position - transform.position;
+        var nearCenter = offset.magnitude >= flock.boundsSize * 0.9f;
+
+        Debug.DrawLine(transform.position, transform.position + offset, Color.red);
+        return nearCenter ? offset.normalized : Vector3.zero;
     }
 
     public void SetFishList(List<Transform> _fishList)
@@ -71,14 +124,4 @@ public class FlockFish : MonoBehaviour
         fishList = new List<Transform>(_fishList);
         fishList.Remove(transform);
     }
-
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + direction);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + avoidVector);
-    }
-#endif
 }

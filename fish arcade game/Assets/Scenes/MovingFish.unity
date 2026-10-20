@@ -238,6 +238,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2 FishStats
       objectReference: {fileID: 0}
+    - target: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7358899213200732176, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
       propertyPath: m_Name
       value: FishIcon
@@ -964,8 +972,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
-  m_sharedMaterial: {fileID: 3905791299656522816, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1285,8 +1293,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
-  m_sharedMaterial: {fileID: 3905791299656522816, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1783,6 +1791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishStats
       objectReference: {fileID: 0}
+    - target: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6685780065924556494, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7358899213200732176, guid: d1665a050b13afa459eb17f257c3975e, type: 3}
       propertyPath: m_Name
       value: FishIcon
@@ -1856,9 +1872,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eee36d867824c4caadde05cb21d7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreateFlock
+  boundsSize: 18
+  avoidanceDistance: 3
+  cohesionDistance: 5
+  alignmentDistance: 5
   fishPrefab: {fileID: 4038602924919047345, guid: 725eccf21957db64284d376bb5e10da0, type: 3}
-  leaderFish: {fileID: 4038602924919047345, guid: 8fed7c8b06fdddd4aa5a5a4fde41ccce, type: 3}
-  flockSize: 9
+  flockSize: 10
+  cohesionWeight: 1
+  avoidanceWeight: 2
+  alignmentWeight: 1
+  boundsWeight: 10
 --- !u!1 &1461888367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,11 +2350,11 @@ PrefabInstance:
     - target: {fileID: 2573350160374499302, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2573350160374499302, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3905791299656522816, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2573350160374499302, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2339,11 +2362,11 @@ PrefabInstance:
     - target: {fileID: 2762217314227947362, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2762217314227947362, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3905791299656522816, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2762217314227947362, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2431,11 +2454,11 @@ PrefabInstance:
     - target: {fileID: 6238764692226035109, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6238764692226035109, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3905791299656522816, guid: e9e998377d298df48af9afd2d52d9b68, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6238764692226035109, guid: c702326e248492348bef6ab1844859d0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
