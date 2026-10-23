@@ -1873,15 +1873,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreateFlock
   boundsSize: 18
-  avoidanceDistance: 3
-  cohesionDistance: 5
-  alignmentDistance: 5
+  avoidanceDistance: 2.5
+  cohesionDistance: 2.5
+  alignmentDistance: 3
   fishPrefab: {fileID: 4038602924919047345, guid: 725eccf21957db64284d376bb5e10da0, type: 3}
   flockSize: 10
   cohesionWeight: 1
   avoidanceWeight: 2
   alignmentWeight: 1
-  boundsWeight: 10
+  boundsWeight: 1
 --- !u!1 &1461888367
 GameObject:
   m_ObjectHideFlags: 0

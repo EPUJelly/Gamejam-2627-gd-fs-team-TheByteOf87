@@ -1,18 +1,18 @@
 
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 public class FlockFish : MonoBehaviour
 {
     [Header("Fish Stats")]
     [SerializeField] float fishSpeed = 5;
-    [SerializeField] float rotationSpeed = 1;
-    [SerializeField] float avoidDistance = 2.5f;
+    [SerializeField] float rotationSpeed = 3;
+    [SerializeField] float FOV;
+    [SerializeField] Vector2 heightLimits;
     FlockManager flock;
     Quaternion lookRotation;
     Vector3 moveVector;
-    float FOV;
     List<Transform> fishList = new List<Transform>(),
         cohesionNeighbours = new List<Transform>(),
         avoidanceNeighbours = new List<Transform>(), 
@@ -40,7 +40,11 @@ public class FlockFish : MonoBehaviour
         if (moveVector == Vector3.zero)
             moveVector = transform.forward;
 
-        Debug.DrawLine(transform.position, transform.position + moveVector, Color.white);
+        //Debug.DrawLine(transform.position, transform.position + moveVector, Color.white);
+        //Debug.DrawLine(transform.position, transform.position + cohesionVector, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + alignmentVector, Color.green);
+        //Debug.DrawLine(transform.position, transform.position + avoidanceVector, Color.purple);
+        //Debug.DrawLine(transform.position, transform.position + boundsVector, Color.red);
         lookRotation = Quaternion.LookRotation(moveVector);
     }
 
@@ -72,11 +76,9 @@ public class FlockFish : MonoBehaviour
         Vector3 cohesionVector = Vector3.zero;
         foreach (var fish in cohesionNeighbours)
         {
-            if (Vector3.Angle(transform.position, fish.position) <= FOV)
-                cohesionVector += fish.position;
+                cohesionVector += fish.position - transform.position;
         }
 
-        Debug.DrawLine(transform.position, transform.position + cohesionVector, Color.blue);
         return cohesionVector.normalized;
     }
 
@@ -87,11 +89,9 @@ public class FlockFish : MonoBehaviour
         var alignmentVector = transform.forward;
         foreach (var fish in alignmentNeighbours)
         {
-            if (Vector3.Angle(transform.position, fish.position) <= FOV)
                 alignmentVector += fish.forward;
         }
 
-        Debug.DrawLine(transform.position, transform.position + alignmentVector, Color.green);
         return alignmentVector.normalized;
     }
 
@@ -101,22 +101,23 @@ public class FlockFish : MonoBehaviour
 
         Vector3 avoidVector = Vector3.zero;
         foreach (var fish in avoidanceNeighbours)
-        {   
-            if (Vector3.Angle(transform.position, fish.position) <= FOV)
+        {
                 avoidVector += transform.position - fish.position;
         }
 
-        Debug.DrawLine(transform.position, transform.position + avoidVector, Color.blue);
         return avoidVector.normalized;
     }
 
     private Vector3 CalculateBoundsVector()
     {
-        var offset = flock.transform.position - transform.position;
-        var nearCenter = offset.magnitude >= flock.boundsSize * 0.9f;
+        if (transform.position.y - flock.transform.position.y > heightLimits.y)
+            return Vector3.down;
+        else if (transform.position.y - flock.transform.position.y < heightLimits.x)
+            return Vector3.up;
 
-        Debug.DrawLine(transform.position, transform.position + offset, Color.red);
-        return nearCenter ? offset.normalized : Vector3.zero;
+        var offset = flock.transform.position - transform.position;
+
+        return offset / flock.boundsSize;
     }
 
     public void SetFishList(List<Transform> _fishList)
