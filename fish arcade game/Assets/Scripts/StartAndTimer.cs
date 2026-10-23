@@ -30,7 +30,7 @@ public class StartAndTimer : MonoBehaviour
     {
         startCanvas.SetActive(true);
         remainingTime = gameTime;
-        EnableText();
+        //EnableText();
     }
 
     void Update()
