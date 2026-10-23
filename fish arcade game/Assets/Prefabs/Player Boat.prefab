@@ -11242,6 +11242,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3315547191858680221}
     - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+      propertyPath: fishFX
+      value: 
+      objectReference: {fileID: 4374341534846738606, guid: a64973427e099d143b83f3c7768a9d12, type: 3}
+    - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
       propertyPath: catchFx
       value: 
       objectReference: {fileID: 7980946769443676193}
@@ -11257,6 +11261,22 @@ PrefabInstance:
       propertyPath: fishTipStart
       value: 
       objectReference: {fileID: 4815100458764247421}
+    - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+      propertyPath: fishModels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+      propertyPath: 'fishModels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 62f2af3e280d38149b2c44b94b97b002, type: 3}
+    - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+      propertyPath: 'fishModels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6804692944438431311, guid: bef85fa7f4147ed4ca71ec065773cf88, type: 3}
+    - target: {fileID: 199528959787947915, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
+      propertyPath: 'fishModels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5132235858707234042, guid: df3311352d80fd2489ea706d868811be, type: 3}
     - target: {fileID: 4001503690499434805, guid: e9ecfe5be6de8a249a3fb80dea2291d7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
