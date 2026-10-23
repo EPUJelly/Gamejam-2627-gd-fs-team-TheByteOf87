@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,6 +38,9 @@ public class Catch : MonoBehaviour
     [SerializeField] private Transform fishTipStart;
     private float fishTipLerp = 0;
     [SerializeField] private ParticleSystem catchFx;
+    [SerializeField] private List<GameObject> fishModels;
+    private GameObject caughtFish;
+    [SerializeField] private GameObject fishFX;
 
     private void Awake()
     {
@@ -57,19 +61,30 @@ public class Catch : MonoBehaviour
     private void FixedUpdate()
     {
         handleSize = Mathf.Lerp(handleSize, handleSizeTarg, 0.3f);
-    }
-
-    private void Update()
-    {
-        fishTip.transform.position = Vector3.Lerp(fishTipStart.position, fishTipEnd.position, fishTipLerp);
         if (isFishingBool)
         {
+            DestroyFish();
             fishTipLerp = Mathf.Lerp(fishTipLerp, 1, 0.1f);
         }
         else
         {
             fishTipLerp = Mathf.Lerp(fishTipLerp, 0, 0.1f);
         }
+    }
+
+    private void DestroyFish()
+    {
+        if (caughtFish != null)
+        {
+            Instantiate(fishFX, caughtFish.transform.position, Quaternion.identity);
+            Destroy(caughtFish);
+        }
+    }
+
+    private void Update()
+    {
+        fishTip.transform.position = Vector3.Lerp(fishTipStart.position, fishTipEnd.position, fishTipLerp);
+
         if (stopFishing) return;
 
         // Start catching fish if hook within target bounds
@@ -132,6 +147,27 @@ public class Catch : MonoBehaviour
 
         FishIcon.gameObject.SetActive(true);
         FishIcon.sprite = chosenFish.icon;
+        if (chosenFish.name == "Catfish")
+        {
+            caughtFish = Instantiate(fishModels[0], fishTip);
+            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 2, fishTip.transform.position.z);
+            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Invoke("DestroyFish", 3);
+        }
+        if (chosenFish.name == "Goldfish")
+        {
+            caughtFish = Instantiate(fishModels[1], fishTip);
+            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 1.5f, fishTip.transform.position.z);
+            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Invoke("DestroyFish", 3);
+        }
+        if (chosenFish.name == "Walking Fish")
+        {
+            caughtFish = Instantiate(fishModels[2], fishTip);
+            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 3, fishTip.transform.position.z);
+            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Invoke("DestroyFish", 3);
+        }
         fishStats.text = "Fish; " + chosenFish.fishName + " Length: " + chosenFish.fishLength + " Points " + chosenFish.points;
         if (player == 0)
             Inventory.collectFishActionP1.Invoke(chosenFish);
@@ -161,6 +197,7 @@ public class Catch : MonoBehaviour
     public Fish GetRandomFish()
     {
         chosenFish = fishList[Random.Range(0, fishList.Count)];
+        //chosenFish = fishList[4];
         return chosenFish;
     }
 
@@ -168,4 +205,5 @@ public class Catch : MonoBehaviour
     {
         rod.GetComponent<Animator>().SetBool("CastRod", false);
     }
+
 }
