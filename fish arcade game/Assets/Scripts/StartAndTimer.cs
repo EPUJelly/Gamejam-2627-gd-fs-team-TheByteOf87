@@ -23,6 +23,7 @@ public class StartAndTimer : MonoBehaviour
     [SerializeField] private Transform boat2;
     [SerializeField] private AudioSource startSfx;
     [SerializeField] private AudioSource endSfx;
+    [SerializeField] private AudioSource timerTick;
     [SerializeField] PlayerInput[] playerInputs;
 
 
@@ -71,6 +72,10 @@ public class StartAndTimer : MonoBehaviour
         if (isRunning == true)
         {
             Invoke("DeductTime", 1);
+        }
+        if (remainingTime == 3 || remainingTime == 2 || remainingTime == 1)
+        {
+            timerTick.Play();
         }
     }
 

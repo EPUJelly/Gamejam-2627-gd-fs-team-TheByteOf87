@@ -41,6 +41,7 @@ public class Catch : MonoBehaviour
     [SerializeField] private List<GameObject> fishModels;
     private GameObject caughtFish;
     [SerializeField] private GameObject fishFX;
+    [SerializeField] private AudioSource looseFish;
 
     private void Awake()
     {
@@ -199,6 +200,12 @@ public class Catch : MonoBehaviour
         chosenFish = fishList[Random.Range(0, fishList.Count)];
         //chosenFish = fishList[4];
         return chosenFish;
+    }
+
+    public void CancelFish()
+    {
+        stopFishing = true;
+
     }
 
     private void ResetCast()
