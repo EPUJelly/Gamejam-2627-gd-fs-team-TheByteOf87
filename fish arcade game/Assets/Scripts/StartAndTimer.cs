@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,8 @@ public class StartAndTimer : MonoBehaviour
     [SerializeField] private AudioSource startSfx;
     [SerializeField] private AudioSource endSfx;
     [SerializeField] PlayerInput[] playerInputs;
+    bool[] playerReady = new bool[2];
+    float[] timer = new float[2];
 
 
     void Start()
@@ -35,15 +38,29 @@ public class StartAndTimer : MonoBehaviour
 
     void Update()
     {
-        if (isRunning == false)
+        if (isRunning)
         {
-            if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.X) && canStart)
-            {
-                StartGame();
-            }
-            
+            timerImage.sprite = timerSprs[211 - remainingTime];
+            return;
         }
-        timerImage.sprite = timerSprs[211 - remainingTime];
+        if (!canStart) return;
+
+        if (playerReady[0] && playerReady[1])
+            StartGame();
+    }
+
+    public void Player1Ready(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        
+        playerReady[0] = true;
+    }
+
+    public void Player2Ready(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        playerReady[1] = true;
     }
 
     public void StartGame()
