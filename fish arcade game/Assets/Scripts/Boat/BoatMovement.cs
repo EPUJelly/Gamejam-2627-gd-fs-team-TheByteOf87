@@ -20,6 +20,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] private ParticleSystem engineParticles;
     [SerializeField] private AudioSource motorSound;
     private bool hasPlayedSound = false;
+    [SerializeField] private AudioSource collide;
     Vector2 moveVector;
 
     void Start()
@@ -80,6 +81,15 @@ public class BoatMovement : MonoBehaviour
                 motorSound.Stop();
                 hasPlayedSound = false;
             }
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collide.Play();
+        if(collision.gameObject.GetComponentInChildren<Catch>())
+        {
+            camShake.shake = 0.3f;
+            collision.gameObject.GetComponentInChildren<Catch>().CancelFish();
         }
     }
 }
