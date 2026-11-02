@@ -4,14 +4,12 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - FishZone1
-  - FishZone2
-  - FishZone3
+  - Fishing Zone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fish
   - Water
   - UI
   - 

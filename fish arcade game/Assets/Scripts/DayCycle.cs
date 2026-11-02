@@ -3,7 +3,7 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class DayCycle : MonoBehaviour
 {
-    [SerializeField] private string timeOfDay;
+    public string timeOfDay;
     [SerializeField] private float noonHeight;
     [SerializeField] private float eveningHeight;
     [SerializeField] private float morningHeight;

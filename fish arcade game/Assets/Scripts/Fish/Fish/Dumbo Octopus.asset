@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Dumbo Octopus
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 20
+  fishLength: 2
   points: 2000
   fishName: Dumbo Octopus
   icon: {fileID: 6886900970343635957, guid: bd4c38155a569de438f243ecab51e4cf, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Koi
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 50
+  fishLength: 3
   points: 2500
   fishName: Koi Fish
   icon: {fileID: 3387389974001836305, guid: eaf3713c535a8984591a127e0fafa1fc, type: 3}

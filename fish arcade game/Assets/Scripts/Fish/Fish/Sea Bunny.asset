@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Sea Bunny
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 2
+  fishLength: 2
   points: 500
   fishName: Sea Bunny
   icon: {fileID: -4933647737565827462, guid: 49f16cfbdeebc2f48bcdfc3eb8ad712e, type: 3}

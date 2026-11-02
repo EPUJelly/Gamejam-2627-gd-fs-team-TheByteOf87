@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Pike
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 40
+  fishLength: 2
   points: 1000
   fishName: Pike
   icon: {fileID: -8666195133947277587, guid: 36caa009d4984b74d891571b8860ac51, type: 3}

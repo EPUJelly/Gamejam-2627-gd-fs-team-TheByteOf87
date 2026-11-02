@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Seal
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 150
+  fishLength: 4
   points: 2500
   fishName: Seal
   icon: {fileID: -8741545005956383620, guid: e864ebf7a770f9a4d9a70cec0f0349a2, type: 3}

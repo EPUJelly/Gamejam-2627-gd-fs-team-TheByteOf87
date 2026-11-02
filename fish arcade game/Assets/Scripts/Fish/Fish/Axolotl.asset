@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Axolotl
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 30
+  fishLength: 1
   points: 1500
   fishName: Axolotl
   icon: {fileID: -5699608653512066461, guid: 9302a1ec763567549ac159a0a2fc35fe, type: 3}

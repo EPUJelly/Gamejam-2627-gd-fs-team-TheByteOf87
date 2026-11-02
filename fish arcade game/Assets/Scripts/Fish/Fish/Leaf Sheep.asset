@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Leaf Sheep
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 1
+  fishLength: 5
   points: 2000
   fishName: Leaf Sheep
   icon: {fileID: -4935486740670624482, guid: aa1b5e2ff87cb224daa7d7122847a339, type: 3}

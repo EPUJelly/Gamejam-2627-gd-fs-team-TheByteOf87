@@ -7,6 +7,8 @@ public class GameStates : MonoBehaviour
 
     public void StartFish(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
         SwitchFishState(playerID);
     }
 

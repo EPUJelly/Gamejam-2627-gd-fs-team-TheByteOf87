@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02a7fe0a0924e4385859a2d94a0262, type: 3}
   m_Name: Eel
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  fishLenght: 400
+  fishLength: 3
   points: 1000
   fishName: Eel
   icon: {fileID: 620221432124653775, guid: ee547bd9df17bdc44b0cdac55771055a, type: 3}
