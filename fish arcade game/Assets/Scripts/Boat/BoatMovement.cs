@@ -88,7 +88,7 @@ public class BoatMovement : MonoBehaviour
         collide.Play();
         if(collision.gameObject.GetComponentInChildren<Catch>())
         {
-            camShake.shake = 0.3f;
+            camShake.shake = 0.1f;
             collision.gameObject.GetComponentInChildren<Catch>().CancelFish();
         }
     }

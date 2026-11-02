@@ -187,8 +187,13 @@ public class Catch : MonoBehaviour
 
     public void CancelFish()
     {
+        isFishingBool = false;
         stopFishing = true;
-
+        rod.GetComponent<Animator>().SetBool("IsFishing", false);
+        fishingSlider.gameObject.SetActive(false);
+        targetSlider.gameObject.SetActive(false);
+        playerInput.SwitchCurrentActionMap("Boating");
+        GameStates.SwitchBoatState(player);
     }
 
     private void ResetCast()
