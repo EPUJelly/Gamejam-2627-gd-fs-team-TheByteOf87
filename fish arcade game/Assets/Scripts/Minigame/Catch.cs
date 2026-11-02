@@ -148,27 +148,10 @@ public class Catch : MonoBehaviour
 
         FishIcon.gameObject.SetActive(true);
         FishIcon.sprite = chosenFish.icon;
-        if (chosenFish.name == "Catfish")
-        {
-            caughtFish = Instantiate(fishModels[0], fishTip);
-            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 2, fishTip.transform.position.z);
-            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
-            Invoke("DestroyFish", 3);
-        }
-        if (chosenFish.name == "Goldfish")
-        {
-            caughtFish = Instantiate(fishModels[1], fishTip);
-            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 1.5f, fishTip.transform.position.z);
-            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
-            Invoke("DestroyFish", 3);
-        }
-        if (chosenFish.name == "Walking Fish")
-        {
-            caughtFish = Instantiate(fishModels[2], fishTip);
-            caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 3, fishTip.transform.position.z);
-            caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
-            Invoke("DestroyFish", 3);
-        }
+        caughtFish = Instantiate(fishModels[0], fishTip);
+        caughtFish.transform.position = new Vector3(fishTip.transform.position.x, fishTip.transform.position.y - 2, fishTip.transform.position.z);
+        caughtFish.transform.rotation = Quaternion.Euler(0, 0, 90);
+        Invoke("DestroyFish", 3);
         fishStats.text = "Fish; " + chosenFish.fishName + " Length: " + chosenFish.fishLength + " Points " + chosenFish.points;
         if (player == 0)
             Inventory.collectFishActionP1.Invoke(chosenFish);

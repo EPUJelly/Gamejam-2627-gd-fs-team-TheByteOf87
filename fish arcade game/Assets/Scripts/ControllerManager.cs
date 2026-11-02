@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class ControllerManager : MonoBehaviour
 {
-    [SerializeField] GameObject inputPrefab;
     [SerializeField] PlayerInput[] playerInputs;
 
     private void Start()
